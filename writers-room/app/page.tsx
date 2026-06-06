@@ -1,3 +1,5 @@
+import WaitlistForm from '@/components/WaitlistForm'
+
 export default function Home() {
   return (
     <>
@@ -85,22 +87,7 @@ export default function Home() {
             <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: '#6b6b6b', maxWidth: '440px', marginBottom: '2rem' }}>
               The Writer's Room is a new platform for aspiring authors to publish stories, receive meaningful feedback, build an audience, and grow toward becoming a professional writer.
             </p>
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <button style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                padding: '12px 26px', borderRadius: '100px',
-                fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600,
-                cursor: 'pointer', background: '#1a3a8f', color: 'white', border: '2px solid #1a3a8f'
-              }}>Join the Waitlist</button>
-              <button style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                padding: '12px 26px', borderRadius: '100px',
-                fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600,
-                cursor: 'pointer', background: 'transparent', color: '#1a3a8f', border: '2px solid #1a3a8f'
-              }}>Learn More</button>
-            </div>
-
-            {/* REAL STATS */}
+            <WaitlistForm />
             <div style={{ display: 'flex', gap: '2rem', marginTop: '2.5rem', paddingTop: '2rem', borderTop: '1px solid #e8e8e4' }}>
               {[
                 { num: '0', label: 'Writers Registered' },
@@ -191,7 +178,7 @@ export default function Home() {
       <div style={{ padding: '0 2rem 5rem', maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{
           background: '#0d2260', color: 'white', borderRadius: '24px',
-          padding: '3.5rem', display: 'grid', gridTemplateColumns: '1fr auto', gap: '2rem', alignItems: 'center'
+          padding: '3.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'center'
         }}>
           <div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 700, marginBottom: '0.6rem', lineHeight: 1.2 }}>
@@ -206,12 +193,12 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <button style={{
-            display: 'inline-flex', alignItems: 'center', gap: '8px',
-            padding: '12px 26px', borderRadius: '100px', flexShrink: 0,
-            fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600,
-            cursor: 'pointer', background: '#c9a227', color: '#141414', border: '2px solid #c9a227'
-          }}>Join the Waitlist</button>
+          <div>
+            <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', lineHeight: 1.6 }}>
+              Join the waitlist and be notified the moment we launch.
+            </p>
+            <WaitlistForm />
+          </div>
         </div>
       </div>
 
@@ -243,5 +230,5 @@ export default function Home() {
         </div>
       </footer>
     </>
-  );
+  )
 }
