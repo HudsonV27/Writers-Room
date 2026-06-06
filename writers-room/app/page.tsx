@@ -15,7 +15,7 @@ export default function Home() {
             background: 'linear-gradient(135deg, #1a3a8f, #c9a227)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             color: 'white', fontWeight: 600, fontSize: '13px', cursor: 'pointer'
-          }}>JD</div>
+          }}>✦</div>
           <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 700, color: '#0d2260' }}>
             The <span style={{ color: '#c9a227' }}>Writer's</span> Room
           </div>
@@ -36,7 +36,7 @@ export default function Home() {
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          {['Discover', 'Writers', 'My Stories'].map(link => (
+          {['Discover', 'Writers', 'Genres'].map(link => (
             <button key={link} style={{
               background: 'none', border: 'none', cursor: 'pointer', padding: '6px 14px',
               fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 500, color: '#6b6b6b',
@@ -47,14 +47,23 @@ export default function Home() {
             background: '#1a3a8f', border: 'none', cursor: 'pointer', padding: '7px 18px',
             fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600, color: 'white',
             borderRadius: '100px'
-          }}>Start Writing</button>
+          }}>Join the Waitlist</button>
         </div>
       </nav>
 
+      {/* COMING SOON BANNER */}
+      <div style={{
+        background: 'linear-gradient(90deg, #0d2260, #1a3a8f)',
+        color: 'white', textAlign: 'center', padding: '10px',
+        fontSize: '13px', fontWeight: 500, marginTop: '64px'
+      }}>
+        🚀 The Writer's Room is launching soon — <span style={{ color: '#e8c547', fontWeight: 700 }}>be one of the first authors to publish.</span>
+      </div>
+
       {/* HERO */}
       <section style={{
-        minHeight: '100vh', display: 'flex', alignItems: 'center',
-        padding: '80px 2rem 4rem',
+        minHeight: 'calc(100vh - 64px)', display: 'flex', alignItems: 'center',
+        padding: '4rem 2rem',
         background: 'radial-gradient(ellipse 80% 60% at 60% 40%, rgba(26,58,143,0.06) 0%, transparent 70%)'
       }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
@@ -65,7 +74,7 @@ export default function Home() {
               borderRadius: '100px', padding: '4px 14px',
               fontSize: '12px', fontWeight: 600, color: '#1a3a8f',
               letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: '20px'
-            }}>✦ For Aspiring Authors</div>
+            }}>✦ Coming Soon</div>
             <h1 style={{
               fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem, 5vw, 3.6rem)',
               fontWeight: 700, lineHeight: 1.1, letterSpacing: '-0.02em',
@@ -74,7 +83,7 @@ export default function Home() {
               Your <em style={{ fontStyle: 'italic', color: '#1a3a8f' }}>Next Chapter</em><br />Starts Here.
             </h1>
             <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: '#6b6b6b', maxWidth: '440px', marginBottom: '2rem' }}>
-              Publish your stories. Receive meaningful feedback from real readers. Build an audience and grow toward becoming a professional author.
+              The Writer's Room is a new platform for aspiring authors to publish stories, receive meaningful feedback, build an audience, and grow toward becoming a professional writer.
             </p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <button style={{
@@ -82,19 +91,21 @@ export default function Home() {
                 padding: '12px 26px', borderRadius: '100px',
                 fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600,
                 cursor: 'pointer', background: '#1a3a8f', color: 'white', border: '2px solid #1a3a8f'
-              }}>Start Writing</button>
+              }}>Join the Waitlist</button>
               <button style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
                 padding: '12px 26px', borderRadius: '100px',
                 fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600,
                 cursor: 'pointer', background: 'transparent', color: '#1a3a8f', border: '2px solid #1a3a8f'
-              }}>Explore Stories</button>
+              }}>Learn More</button>
             </div>
+
+            {/* REAL STATS */}
             <div style={{ display: 'flex', gap: '2rem', marginTop: '2.5rem', paddingTop: '2rem', borderTop: '1px solid #e8e8e4' }}>
               {[
-                { num: '12,400+', label: 'Writers Registered' },
-                { num: '38,900+', label: 'Stories Published' },
-                { num: '94,200+', label: 'Reviews Written' },
+                { num: '0', label: 'Writers Registered' },
+                { num: '0', label: 'Stories Published' },
+                { num: '0', label: 'Reviews Written' },
               ].map(stat => (
                 <div key={stat.label}>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 700, color: '#0d2260' }}>{stat.num}</div>
@@ -103,25 +114,24 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div style={{ position: 'relative', height: '420px' }}>
+
+          {/* FEATURE CARDS */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { emoji: '📖', title: 'The Forgotten Kingdom', author: '@elara_writes', genre: 'Fantasy', bg: 'linear-gradient(135deg, #e8f0fe, #c7d7fd)', style: { width: '260px', top: '20px', left: '10px', transform: 'rotate(-3deg)', zIndex: 1 } },
-              { emoji: '🌙', title: 'Midnight Letters', author: '@thomas_c', genre: 'Romance', bg: 'linear-gradient(135deg, #fdf6e3, #fbecc6)', style: { width: '240px', top: '60px', right: '0', transform: 'rotate(2deg)', zIndex: 2 } },
-              { emoji: '🌿', title: 'The Last Garden', author: '@grace_pen', genre: 'Sci-Fi', bg: 'linear-gradient(135deg, #f0fff4, #c6f6d5)', style: { width: '220px', bottom: '20px', left: '60px', transform: 'rotate(-1deg)', zIndex: 3 } },
-            ].map(card => (
-              <div key={card.title} style={{
-                position: 'absolute', background: 'white', borderRadius: '16px',
-                border: '1px solid rgba(0,0,0,0.07)', overflow: 'hidden',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)', ...card.style
+              { icon: '📖', title: 'Publish Your Stories', desc: 'Upload DOCX, PDF, or TXT files. We handle the formatting so you can focus on writing.' },
+              { icon: '💬', title: 'Get Real Feedback', desc: 'Structured critiques on characters, plot, dialogue, worldbuilding, pacing, and more.' },
+              { icon: '📊', title: 'Track Your Growth', desc: 'See exactly where readers stop reading with chapter-by-chapter retention analytics.' },
+              { icon: '🌟', title: 'Build an Audience', desc: 'Gain followers, earn achievements, and grow your reputation as an author.' },
+            ].map(feature => (
+              <div key={feature.title} style={{
+                display: 'flex', alignItems: 'flex-start', gap: '14px',
+                background: 'white', borderRadius: '14px', padding: '1rem 1.25rem',
+                border: '1px solid rgba(0,0,0,0.07)',
               }}>
-                <div style={{ height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.5rem', background: card.bg }}>{card.emoji}</div>
-                <div style={{ padding: '12px 14px' }}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '14px', fontWeight: 700, marginBottom: '4px' }}>{card.title}</div>
-                  <div style={{ fontSize: '11px', color: '#6b6b6b', marginBottom: '8px' }}>by {card.author}</div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '10px', fontWeight: 600, padding: '3px 8px', borderRadius: '100px', background: '#e8f0fe', color: '#1a3a8f' }}>{card.genre}</span>
-                    <span style={{ color: '#c9a227', fontSize: '11px' }}>★★★★★</span>
-                  </div>
+                <span style={{ fontSize: '1.5rem', flexShrink: 0 }}>{feature.icon}</span>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '14px', fontWeight: 700, marginBottom: '3px' }}>{feature.title}</div>
+                  <div style={{ fontSize: '13px', color: '#6b6b6b', lineHeight: 1.5 }}>{feature.desc}</div>
                 </div>
               </div>
             ))}
@@ -129,40 +139,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRENDING */}
-      <div style={{ padding: '5rem 2rem', maxWidth: '1100px', margin: '0 auto' }}>
+      {/* EMPTY STATE — STORIES */}
+      <div style={{ padding: '4rem 2rem', maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '2rem' }}>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 700 }}>
-            Trending <span style={{ color: '#1a3a8f', fontStyle: 'italic' }}>This Week</span>
+            Trending <span style={{ color: '#1a3a8f', fontStyle: 'italic' }}>Stories</span>
           </h2>
-          <a href="#" style={{ fontSize: '13px', color: '#1a3a8f', fontWeight: 600, textDecoration: 'none' }}>View all →</a>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1.25rem' }}>
-          {[
-            { emoji: '🏰', title: 'Echoes of the Throne', author: '@marlowe_ink', genre: 'Fantasy', reads: '24.1k', badge: '🔥 Hot', bg: '#e8f0fe', color: '#1a3a8f' },
-            { emoji: '⚡', title: 'Static Summer', author: '@nova_scribe', genre: 'YA', reads: '18.7k', badge: 'NEW', bg: '#fdf6e3', color: '#8a6500' },
-            { emoji: '🌊', title: 'Deep Below Zero', author: '@celius_writes', genre: 'Thriller', reads: '15.3k', badge: '📌 Top', bg: '#e0f7f4', color: '#0e6e63' },
-            { emoji: '💌', title: 'Letters to Nobody', author: '@penelope_r', genre: 'Romance', reads: '12.8k', badge: '❤️ Loved', bg: '#fde8f0', color: '#8a1245' },
-            { emoji: '🚀', title: 'Orbital Drift', author: '@axion_words', genre: 'Sci-Fi', reads: '9.4k', badge: '⭐ Rising', bg: '#f0f0ff', color: '#3730a3' },
-          ].map(story => (
-            <div key={story.title} style={{
-              background: 'white', borderRadius: '14px', overflow: 'hidden',
-              border: '1px solid rgba(0,0,0,0.07)', cursor: 'pointer'
-            }}>
-              <div style={{ height: '110px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.2rem', background: `${story.bg}66`, position: 'relative' }}>
-                {story.emoji}
-                <span style={{ position: 'absolute', top: '8px', right: '8px', fontSize: '10px', fontWeight: 700, padding: '3px 8px', borderRadius: '100px', background: 'rgba(0,0,0,0.5)', color: 'white' }}>{story.badge}</span>
-              </div>
-              <div style={{ padding: '10px 12px 12px' }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '13px', fontWeight: 700, marginBottom: '2px', lineHeight: 1.3 }}>{story.title}</div>
-                <div style={{ fontSize: '11px', color: '#6b6b6b', marginBottom: '6px' }}>{story.author}</div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span style={{ fontSize: '10px', fontWeight: 600, padding: '2px 8px', borderRadius: '100px', background: story.bg, color: story.color }}>{story.genre}</span>
-                  <span style={{ fontSize: '10px', color: '#6b6b6b' }}>👁 {story.reads}</span>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div style={{
+          background: 'white', borderRadius: '20px', border: '2px dashed #e8e8e4',
+          padding: '4rem 2rem', textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✍️</div>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 700, marginBottom: '0.5rem', color: '#0d2260' }}>No stories yet — be the first!</h3>
+          <p style={{ fontSize: '14px', color: '#6b6b6b', maxWidth: '400px', margin: '0 auto 1.5rem', lineHeight: 1.6 }}>
+            The Writer's Room is just getting started. Join the waitlist and be among the first authors to publish on the platform.
+          </p>
+          <button style={{
+            padding: '10px 24px', borderRadius: '100px', border: 'none',
+            background: '#1a3a8f', color: 'white', fontFamily: 'var(--font-body)',
+            fontSize: '13px', fontWeight: 600, cursor: 'pointer'
+          }}>Join the Waitlist</button>
+        </div>
+      </div>
+
+      {/* EMPTY STATE — WRITERS */}
+      <div style={{ padding: '0 2rem 4rem', maxWidth: '1100px', margin: '0 auto' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '2rem' }}>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 700 }}>
+            Featured <span style={{ color: '#1a3a8f', fontStyle: 'italic' }}>Writers</span>
+          </h2>
+        </div>
+        <div style={{
+          background: 'white', borderRadius: '20px', border: '2px dashed #e8e8e4',
+          padding: '4rem 2rem', textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌟</div>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 700, marginBottom: '0.5rem', color: '#0d2260' }}>Your name could be here.</h3>
+          <p style={{ fontSize: '14px', color: '#6b6b6b', maxWidth: '400px', margin: '0 auto 1.5rem', lineHeight: 1.6 }}>
+            Featured writers are chosen from our community. Sign up, publish your work, and earn your spot.
+          </p>
+          <button style={{
+            padding: '10px 24px', borderRadius: '100px', border: 'none',
+            background: '#1a3a8f', color: 'white', fontFamily: 'var(--font-body)',
+            fontSize: '13px', fontWeight: 600, cursor: 'pointer'
+          }}>Become a Writer</button>
         </div>
       </div>
 
@@ -190,7 +211,7 @@ export default function Home() {
             padding: '12px 26px', borderRadius: '100px', flexShrink: 0,
             fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600,
             cursor: 'pointer', background: '#c9a227', color: '#141414', border: '2px solid #c9a227'
-          }}>Start Getting Feedback</button>
+          }}>Join the Waitlist</button>
         </div>
       </div>
 
@@ -200,7 +221,7 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
             <div>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'white', fontWeight: 700, marginBottom: '8px' }}>The Writer's Room</div>
-              <p style={{ fontSize: '12px', lineHeight: 1.6, opacity: 0.7, maxWidth: '220px' }}>Your next chapter starts here. A platform built for aspiring authors.</p>
+              <p style={{ fontSize: '12px', lineHeight: 1.6, opacity: 0.7, maxWidth: '220px' }}>Your next chapter starts here. A platform built for aspiring authors to publish, grow, and improve their craft.</p>
             </div>
             {[
               { title: 'Platform', links: ['Discover Stories', 'Featured Writers', 'Genres', 'Community'] },
