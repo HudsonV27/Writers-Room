@@ -7,25 +7,17 @@ export default function Home() {
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '0 2rem', height: '64px',
+        padding: '0 2rem', height: '200px',
         background: 'rgba(250,250,247,0.92)', backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid rgba(26,58,143,0.08)'
+borderBottom: '1px solid rgba(26,58,143,0.08)'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <div style={{
-            width: '36px', height: '36px', borderRadius: '50%',
-            background: 'linear-gradient(135deg, #1a3a8f, #c9a227)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            color: 'white', fontWeight: 600, fontSize: '13px', cursor: 'pointer'
-          }}>✦</div>
-          <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 700, color: '#0d2260' }}>
-            The <span style={{ color: '#c9a227' }}>Writer's</span> Room
-          </div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <img src="/logo.png" alt="The Writer's Room" style={{ height: '300px', width: 'auto' }} />
         </div>
         <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
           <div style={{
             display: 'flex', alignItems: 'center', gap: '8px',
-            background: 'white', border: '1.5px solid #e8e8e4',
+background: 'white', border: '1.5px solid #e8e8e4',
             borderRadius: '100px', padding: '6px 16px', width: '280px'
           }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b6b6b" strokeWidth="2">
@@ -46,9 +38,8 @@ export default function Home() {
             }}>{link}</button>
           ))}
           <button style={{
-            background: '#1a3a8f', border: 'none', cursor: 'pointer', padding: '7px 18px',
-            fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600, color: 'white',
-            borderRadius: '100px'
+           background: '#1a3a8f', border: 'none', cursor: 'pointer', padding: '7px 18px',
+fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600, color: 'white',
           }}>Join the Waitlist</button>
         </div>
       </nav>
@@ -57,14 +48,14 @@ export default function Home() {
       <div style={{
         background: 'linear-gradient(90deg, #0d2260, #1a3a8f)',
         color: 'white', textAlign: 'center', padding: '10px',
-        fontSize: '13px', fontWeight: 500, marginTop: '64px'
+        fontSize: '13px', fontWeight: 500, marginTop: '200px'
       }}>
         🚀 The Writer's Room is launching soon — <span style={{ color: '#e8c547', fontWeight: 700 }}>be one of the first authors to publish.</span>
       </div>
 
       {/* HERO */}
       <section style={{
-        minHeight: 'calc(100vh - 64px)', display: 'flex', alignItems: 'center',
+        minHeight: 'calc(100vh - 80px)', display: 'flex', alignItems: 'center',
         padding: '4rem 2rem',
         background: 'radial-gradient(ellipse 80% 60% at 60% 40%, rgba(26,58,143,0.06) 0%, transparent 70%)'
       }}>
