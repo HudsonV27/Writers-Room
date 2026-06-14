@@ -1,4 +1,5 @@
 import WaitlistForm from '@/components/WaitlistForm'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -20,7 +21,8 @@ export default function Home() {
           {['Discover', 'Writers', 'Genres'].map(link => (
             <button key={link} className="nav-link-btn">{link}</button>
           ))}
-          <button className="nav-cta">Join the Waitlist</button>
+          <Link href="/login" className="nav-link-btn" style={{textDecoration: 'none'}}>Log In</Link>
+          <Link href="/signup" className="nav-cta" style={{textDecoration: 'none', padding: '7px 18px', borderRadius: '100px', background: '#1a3a8f', color: 'white', fontSize: '13px', fontWeight: 600}}>Sign Up</Link>
         </div>
       </nav>
 
@@ -89,7 +91,7 @@ export default function Home() {
       </div>
 
       {/* EMPTY STATE — WRITERS */}
-      <div className="section" style={{ paddingTop: 0 }}>
+      <div className="section" style={{paddingTop: 0}}>
         <div className="section-header">
           <h2 className="section-title">Featured <span>Writers</span></h2>
         </div>
@@ -97,7 +99,7 @@ export default function Home() {
           <div className="empty-state-icon">🌟</div>
           <h3>Your name could be here.</h3>
           <p>Featured writers are chosen from our community. Sign up, publish your work, and earn your spot.</p>
-          <button className="empty-state-btn">Become a Writer</button>
+          <Link href="/signup" className="empty-state-btn" style={{textDecoration: 'none', display: 'inline-block'}}>Become a Writer</Link>
         </div>
       </div>
 
