@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function SignUp() {
   const [step, setStep] = useState(1)
@@ -14,7 +15,7 @@ export default function SignUp() {
   const [userType, setUserType] = useState('writer')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [success, setSuccess] = useState(false)
+  const router = useRouter()
 
   const handleStep1 = () => {
     if (!email || !password || !confirmPassword) { setError('Please fill in all fields.'); return }
@@ -38,28 +39,15 @@ export default function SignUp() {
         user_type: userType,
       }])
     }
-    setSuccess(true)
     setLoading(false)
-  }
-
-  if (success) {
-    return (
-      <div className="auth-page">
-        <div className="auth-card">
-          <div className="auth-success-icon">📬</div>
-          <h2 className="auth-title">Check your email!</h2>
-          <p className="auth-sub">We sent a confirmation link to <strong>{email}</strong>. Click it to activate your account.</p>
-          <Link href="/login" className="auth-btn-primary" style={{ display: 'block', textAlign: 'center', textDecoration: 'none', marginTop: '1.5rem' }}>Go to Login</Link>
-        </div>
-      </div>
-    )
+    router.push('/profile/setup')
   }
 
   return (
     <div className="auth-page">
       <div className="auth-card">
         <Link href="/">
-          <img src="/logo.png" alt="The Writers Room" style={{ height: '80px', width: 'auto', display: 'block', margin: '0 auto 1.5rem' }} />
+          <img src="/logo.png" alt="The Writers Room" style={{height: '80px', width: 'auto', display: 'block', margin: '0 auto 1.5rem'}} />
         </Link>
 
         <div className="auth-steps">
